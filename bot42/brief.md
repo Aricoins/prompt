@@ -1,283 +1,171 @@
+# BRIEF FINAL - CHATBOT LATITUD 42
 
+## INFORMACIÓN DEL NEGOCIO
 
-📝 Formulario de Configuración para tu Chatbot IA
-Henko Labs
-👉 Este formulario nos ayuda a conocer tu negocio y tus necesidades, para diseñar un asistente virtual que realmente te ayude.
- Mientras más claro y completo seas, mejor podrá funcionar tu chatbot!
-Este formulario debe completarse a conciencia y con detalle.
+### DATOS GENERALES
+- **Empresa**: Latitud 42
+- **Fundador**: Ariel Rogel
+- **Especialidad**: Desarrollo de aplicaciones web y móviles con enfoque en IA
+- **Experiencia**: +3 años ayudando startups y PyMEs de Argentina y Latinoamérica
+- **Misión**: Acelerar el crecimiento empresarial mediante soluciones tecnológicas personalizadas
 
+### SERVICIOS PRINCIPALES
+1. **Desarrollo Web y Móvil** - Aplicaciones modernas y escalables
+2. **SEO Técnico** - Optimización y posicionamiento orgánico
+3. **Ciberseguridad** - Auditorías y protección de datos
 
-El proceso de onboarding dura aproximadamente 20 días desde la primera reunión, con lanzamiento estimado en la tercera reunión.
+### PÚBLICO OBJETIVO
+- **Perfil**: Emprendedores, startups early-growth, PyMEs (25-50 años)
+- **Ubicación**: Argentina y Latinoamérica
+- **Necesidad**: Digitalización de procesos y lanzamiento de productos digitales
 
-1️⃣ SOBRE TU NEGOCIO
-1.1. ¿Cómo describirías tu negocio en 2-3 frases?
- Somos una empresa especializada en el desarrollo de aplicaciones web y móviles modernas y escalables, con un fuerte enfoque en el uso de inteligencia artificial como herramienta de desarrollo. Ayudamos a startups y PyMEs a digitalizar sus procesos y acelerar su crecimiento mediante soluciones tecnológicas personalizadas.
-1.2. ¿Qué tipo de clientes te compran? (describe su edad, intereses, ubicación, etc.)
-Nuestros clientes son principalmente emprendedores, startups en etapa early-growth y PyMEs de Argentina y Latinoamérica que buscan digitalizar sus operaciones o lanzar productos digitales innovadores. Suelen ser personas de 25-50 años, con conocimientos técnicos básicos e interés en soluciones robustas y escalables.
-1.3. ¿Qué productos o servicios principales ofreces?
-Desarrollo de aplicaciones web y móviles, optimización SEO técnico y auditorías de ciberseguridad.
+### CONTACTO
+- **WhatsApp**: +54 2944 997941
+- **Horario**: Lunes a Viernes 9:00-18:00 hs (ARG)
+- **LinkedIn**: Ariel Rogel
+- **Calendly**: https://calendly.com/arielrogeldev/30min
+
+---
 
-2️⃣ ¿QUÉ ESPERÁS DE TU CHATBOT?
-2.1. ¿Qué tareas específicas querés que haga tu chatbot? (Marca las que correspondan o agregá otras):
-Responder consultas frecuentes
+## ARQUITECTURA DEL CHATBOT
+
+### AGENTE COORDINADOR - ARIEL
+- **Función**: Recepción, clasificación inicial y derivación inteligente.
+- **Personalidad**: Profesional, amigable, estratégico.
+- **Flujo**: Saludo → Clasificación → Derivación a especialista.
+
+### AGENTE SEO (/seo) - FACU
+- **Función**: Consultas de posicionamiento y optimización web.
+- **Personalidad**: Estratégico, analítico, orientado a resultados.
+- **Flujo**: Diagnóstico inicial → Cualificación del Lead → Propuesta de Valor → Agendamiento.
+
+### AGENTE CIBERSEGURIDAD (/ciberseguridad) - MARINA
+- **Función**: Consultas de seguridad informática y protección.
+- **Personalidad**: Profesional, preventivo, educativo.
+- **Flujo**: Evaluación de riesgo → Cualificación del Lead → Plan de acción → Agendamiento.
+
+---
+
+## HERRAMIENTAS INTEGRADAS
+
+### Agente Coordinador (Ariel)
+- **catalogo**: Obtiene productos y servicios específicos de desarrollo de la empresa.
+- **consumir_informacion**: Obtiene información específica de la empresa (complementa a `catalogo`).
+- **catalogo_tiendanube**: (Integración `tiendanube`) - Obtiene productos de una tienda (uso para test off-topic).
+- **menu-de-opciones**: (Integración `enviar_texto`) - Ofrece información sobre servicios generales.
+- **proyectos**: (Integración `http_request`) - Muestra casos de éxito y proyectos realizados.
 
+### Agente Especialista en SEO (Facu)
+- **catalogo_seo**: (Integración `planilla_excel`) - Consulta productos y servicios SEO desde un Excel.
+- **registro_seo**: (Integración `custom_sheets`) - Registra usuarios interesados en SEO en Google Sheets.
 
-Guiar en la venta productos y servicios
-Ofrecer información sobre los productos y servicios
-Registrar clientes futuros
+### Agente especialista en ciberseguridad (Marina)
+- **catalogo_cybersecu**: (Integración `shopify`) - Consulta productos de ciberseguridad desde Shopify.
+- **registro_usuarios**: (Integración `custom_sheets`) - Registra usuarios interesados en Ciberseguridad en Google Sheets.
 
+---
+
+## CLAVES DE DERIVACIÓN
 
-Tomar reservas o turnos
-Interpretar imagen (No recomendamos si necesitan un análisis técnico de imagenes)
-
-
-Atender reclamos
-
-
-Derivar a un humano en ciertos casos
-
-
-Otra: - Simplificar explicación inicial
-- Generar reuniones
-
-
-
-2.2. ¿Qué resultados o beneficios esperás lograr con el chatbot?
-Optimizar la captación de leads, cualificarlos automáticamente y agilizar la explicación inicial de servicios técnicos para evitar saturación de consultas básicas en el equipo comercial.
-
-3️⃣ EL TONO Y PERSONALIDAD DEL CHATBOT
-3.1. ¿Cómo querés que hable tu chatbot?
- (Marcá 1 o combiná):
-Formal
-
-
-Profesional
-
-
-Amigable
-
-
-Divertido
-
-
-Casual/informal
-
-
-Otra: ___________
-
-
-3.2. ¿Querés que use emojis? ¿Tuteo o usted? ¿Algún modismo o frase que deba usar?
- Uso moderado de emojis (🚀, ⚡, 🤖). Tuteo. Frases como: "¡Genial!", "Perfecto.", "Te ayudo con eso."
-
-3.3. ¿Le pondrias un nombre al chatbot? ¿Tienes en mente una frase con la que te gustaria que empiece una conversacion?
-Nombre: Ariel (asistente virtual de Latitud 42). Frase inicial: "¡Hola! 👋 Soy Ariel, tu asistente virtual de Latitud 42. ¿En qué te puedo ayudar hoy?"
-
-4️⃣ GUÍA PARA SU FUNCIONAMIENTO
-4.1. Imaginá que contratás un nuevo empleado. ¿Qué 3 instrucciones clave le darías para atender clientes?
- Ejemplo:
-Siempre saludar y presentarse de manera cálida pero profesional.
-Cualificar al lead preguntando tipo de proyecto, industria y timeline estimado.
-Derivar a un humano si la consulta es técnica compleja o hay interés avanzado.
-
-
-4.2. ¿Qué NO debería hacer el chatbot bajo ningún motivo?
-No dar precios cerrados sin derivar a un humano, ni prometer plazos de entrega exactos.
-4.3. ¿En qué momentos sí o sí debería pasar la conversación a una persona de tu equipo?
- Cuando el lead haga una pregunta compleja que el bot no tiene rigurosidad para responder
-
-5️⃣ FLUJOS DE TRABAJO Y PASOS DE ATENCIÓN
-5.1. ¿Cómo debería comenzar la conversación? (Ejemplo de saludo inicial + pregunta clave inicial)
-"¡Buenos días/tardes/noches! 👋 Soy Ariel, de Latitud 42. Estoy aquí para ayudarte a impulsar tu idea con tecnología. ¿Es para un proyecto web, móvil o necesitás asesoramiento técnico?"
-5.2. ¿Qué pasos debería seguir para vender o atender?
- Podés describir brevemente o dar ejemplos de conversaciones habituales.
-Saludo y presentación.
-Preguntar por el tipo de proyecto (web, app, SEO, etc.).
-Preguntar industria del cliente (ej: salud, legales, e-commerce).
-Ofrecer información relevante de servicios y productos afines
-Agendar una reunión en Calendly
-
-5.3. ¿Qué datos sí o sí necesitás pedirle al cliente antes de avanzar con una venta o reserva?
-Nombre, email, tipo de proyecto (web/app/SEO), industria y timeline.
-
-6️⃣ HERRAMIENTAS, MATERIALES Y SISTEMAS DISPONIBLES
-6.1. ¿Qué archivos, catálogos, PDFs, links, imágenes debería usar el chatbot para responder?
- 👉 Podés adjuntar archivos o pegar links.
-Catálogo de servicios en formato tabla 
-6.2. ¿Usás alguna plataforma o sistema que debería integrarse? (Marcá o escribí las que uses)
-Shopify
-
-
-WooCommerce
-
-
-Tiendanube
-
-
-Google Sheets
-
-
-Prestashop
-
-
-SQL
-
-
-Otra: ___________
-
-
-6.3. ¿Necesitás que el chatbot se conecte a alguna API o sistema externo (por ejemplo: Google Calendar, CRM, ERP, sistema propio)?
- 👉 Si necesitás alguna integración compleja, avisá al prompter designado para coordinar su análisis y factibilidad.
-Si debe conectarse a google calendar para agendar reuniones
-
-7️⃣ INFORMACIÓN CLAVE DE TU EMPRESA
-7.1. Adjuntá tus datos básicos: nombre comercial, redes sociales, dirección(es), horarios de atención, contacto.
-. Nombre: Latitud 42. Redes: LinkedIn (Ariel Rogel). Horario: Lunes a Viernes de 9 a 18 hs (ARG). Contacto: 2944997941 .
-7.2. ¿Qué políticas o condiciones importantes debería conocer el chatbot? (por ejemplo: devoluciones, facturación, envíos, promociones)
- 👉 Podés copiar y pegar si ya las tenés escritas, o darnos un resumen.
-No se comparten precios sin diagnóstico previo. Trabajamos bajo metodologías ágiles y sprints de desarrollo. Facturación en USD o ARS (según caso).
-
-8️⃣ DETALLES IMPORTANTES
-✅ Envíos
-¿Qué opciones ofrecen?
-
-
-¿A qué zonas?
-
-
-¿Costos? ¿Promociones de envío gratis?
-
-
-¿Qué hacer si hay demoras?
-
-
-✅ Pagos
-¿Qué métodos aceptan?
-
-
-¿Cuotas/promociones bancarias?
-
-
-¿Se confirma pago antes de despachar?
-
-
-¿Qué pasa si un pago falla?
-
-
-✅ Facturación
-¿Qué tipos de facturas emiten?
-
-
-¿Qué datos piden?
-
-
-¿Cómo corrigen/reenvían facturas?
-
-
-✅ Devoluciones
-¿Cuándo aceptan?
-
-
-¿Plazo y requisitos?
-
-
-¿Reembolsos o solo cambio?
-
-
-✅ Promociones bancarias
-¿Qué promos ofrecen?
-
-
-¿Cómo las comunican?
-
-
-¿Condiciones/restricciones?
-
-
-✅ Sucursales
-Dirección y horarios
-
-
-Diferencias entre sucursales
-
-9️⃣ EJEMPLOS REALES DE CONVERSACIONES
-👉 Adjuntá capturas de pantalla o textos de chats reales (WhatsApp, Instagram, etc.) que tengas con tus clientes.
- Esto nos ayuda a ver cómo hablan y qué preguntan
-🎉 ¡LISTO!
-👉 Una vez completes esto, nuestro equipo empezará a diseñar tu chatbot y coordinaremos la próxima reunión.
-
-
-
-Apikey shopify
-https://pruebahencko.myshopify.com
-Shpat_7ed27a9595f5f55d49947dc9e3eb3241
-
-Apikey tiendanube
-
-aa70b72003911db4de47d9020df4888617ed9907edef8e89d5491ebf4b1ae274
-
-DATA SEGURIDAD https://github.com/Aricoins/sentinel/blob/master/src/data/dnso-data.ts
-
-
-🧪 Serie de Pruebas para el Chatbot de Latitud 42
-1. Preguntas Generales y de Bienvenida
-"Hola, ¿qué hacen?"
-"¿Me podrían ayudar con un proyecto?"
-"¿Qué servicios ofrecen?"
-"¿Tienen experiencia con apps de salud?"
-"¿Trabajan con PyMEs?"
-2. Preguntas Técnicas Específicas de Desarrollo (Deberían derivar a /desarrolloweb)
-"¿Qué tecnologías usan para el frontend?"
-"¿Hacen apps nativas o híbridas?"
-"¿Trabajan con bases de datos SQL?"
-"¿Usan React o Angular?"
-"¿Tienen experiencia integrando APIs de pago?"
-"¿Qué es mejor para un e-commerce, Next.js o React?"
-3. Consultas sobre Proyectos y Presupuestos (Deberían cualificar y derivar a humano)
-"Quiero hacer una app similar a Uber."
-"Necesito un presupuesto para una web."
-"¿Cuánto cuesta hacer una aplicación?"
-"Tengo una idea para una startup, ¿me ayudan?"
-"¿Cuánto tardan en desarrollar un MVP?"
-4. Preguntas de Ciberseguridad (Deberían derivar a /ciberseguridad)
-"¿Hacen auditorías de seguridad?"
-"Mi sitio fue hackeado, ¿me pueden ayudar?"
-"¿Cómo protegen los datos en las apps que desarrollan?"
-"¿Qué es un pentest?"
-"¿Cumplen con la ley de protección de datos?"
-5. Preguntas de SEO (Deberían derivar a /seo)
-"¿Me ayudan a posicionar mi web en Google?"
-"¿Qué es el SEO técnico?"
-"Mi sitio es lento, ¿lo pueden optimizar?"
-"¿Hacen auditorías SEO?"
-"¿Cómo puedo mejorar mi Core Web Vitals?"
-6. Casos de Éxito y Portafolio
-"¿Tienen ejemplos de proyectos que hayan hecho?"
-"¿Trabajaron en algún proyecto legal?"
-"Muéstrenme algún caso de éxito."
-"¿Han hecho algo con IA?"
-7. Procesos y Metodologías
-"¿Cómo trabajan? ¿Qué metodología usan?"
-"¿Hacen reuniones de seguimiento?"
-"¿Entregan el código fuente?"
-"¿Trabajan con metodologías ágiles?"
-8. Solicitudes de Contacto y Derivación a Humano
-"Quiero hablar con un humano."
-"¿Puedo agendar una reunión?"
-"Dame tu número de WhatsApp."
-"¿Cuál es el email de contacto?"
-9. Preguntas Extremas o Off-Topic (Manejo de errores)
-"¿Qué hora es en Argentina?"
-"¿Qué música te gusta?"
-"Hacéme un chiste."
-"No te entiendo."
-(Un mensaje con sólo emojis o caracteres especiales)
-
-✅ Qué Evaluar en las Respuestas:
-Derivación Correcta: ¿Deriva al agente especializado (/seo, /ciberseguridad, /desarrolloweb) cuando corresponde?
-Cualificación de Leads: ¿Hace preguntas para obtener información clave (tipo de proyecto, industria) antes de derivar o agendar?
-Tono y Personalidad: ¿Mantiene un tono profesional y amigable? ¿Usa emojis de forma moderada?
-Límites Claros: ¿Evita dar precios o plazos exactos? ¿Deriva a un humano cuando la pregunta es sobre cotización?
-Precisión Técnica: ¿La información que brinda sobre tecnologías y casos de éxito es correcta?
-Manejo de Errores: ¿Responde gracefulmente a preguntas fuera de contexto sin bloquearse?
-Flujo de Agendamiento: ¿Ofrece agendar una reunión de manera clara y proporciona un enlace o integración funcional con "Google Calendar" después de cualificar?
-
+### PALABRAS CLAVE PARA SEO
+- seo, posicionamiento, google, ranking, tráfico, keywords, orgánico, search console, analytics, contenido, backlinks, core web vitals
+
+### PALABRAS CLAVE PARA CIBERSEGURIDAD  
+- seguridad, hacking, vulnerabilidad, pentest, protección, datos, gdpr, firewall, malware, ciberataque, auditoría de seguridad
+
+### PALABRAS CLAVE PARA DESARROLLO (COORDINADOR)
+- app, aplicación, web, desarrollo, mvp, startup, e-commerce, plataforma, react, node, base de datos
+
+---
+
+## REGLAS DE FUNCIONAMIENTO CLAVE
+
+### Instrucciones Clave
+- ✅ Saludar cordialmente y de forma dinámica según la hora.
+- ✅ Identificar correctamente la necesidad del usuario (Desarrollo, SEO, Ciberseguridad).
+- ✅ Cualificar leads de desarrollo con las preguntas definidas antes de agendar.
+- ✅ Ofrecer agendamiento vía Calendly después de una cualificación exitosa.
+- ✅ Derivar consultas de SEO y Ciberseguridad a los agentes especialistas correctos.
+- ✅ Mantener la coherencia en la transición entre agentes.
+
+### Límites (Qué NO hacer)
+- ❌ NO dar precios cerrados sin un diagnóstico previo en una reunión.
+- ❌ NO prometer plazos de entrega exactos.
+- ❌ NO responder consultas técnicas de código o arquitectura complejas.
+
+### Escalamiento y Casos Especiales
+- **Consultas técnicas complejas**: Derivar directamente al WhatsApp de Ariel Rogel.
+- **Petición de precios sin contexto**: Invitar a agendar una reunión para un diagnóstico.
+- **Consultas fuera de tema**: Re-encauzar la conversación hacia los servicios ofrecidos.
+
+---
+
+## BATERÍA DE PRUEBAS (Test Suite)
+
+### 1. Preguntas Generales y de Bienvenida
+- "Hola, ¿qué hacen?"
+- "¿Me podrían ayudar con un proyecto?"
+- "¿Qué servicios ofrecen?"
+
+### 2. Consultas sobre Proyectos y Presupuestos
+- "Quiero hacer una app similar a Uber"
+- "Necesito un presupuesto para una web"
+- "¿Cuánto cuesta hacer una aplicación?"
+- "Tengo una idea para una startup, ¿me ayudan?"
+
+### 3. Preguntas de Derivación a SEO
+- "¿Me ayudan a posicionar mi web en Google?"
+- "¿Qué es el SEO técnico?"
+- "Mi sitio es lento, ¿lo pueden optimizar?"
+- "¿Hacen auditorías SEO?"
+- "¿Cómo puedo mejorar mi Core Web Vitals?"
+
+### 4. Preguntas de Derivación a Ciberseguridad
+- "¿Hacen auditorías de seguridad?"
+- "Mi sitio fue hackeado, ¿me pueden ayudar?"
+- "¿Cómo protegen los datos en las apps?"
+- "¿Qué es un pentest?"
+
+### 5. Preguntas sobre la Empresa
+- "¿Tienen ejemplos de proyectos que hayan hecho?"
+- "¿Cómo trabajan? ¿Qué metodología usan?"
+- "¿Entregan el código fuente?"
+
+### 6. Manejo de Errores y Off-Topic
+- "¿Qué hora es en Argentina?"
+- "¿Qué música te gusta?"
+- "Hacéme un chiste"
+- Mensajes solo con emojis
+
+---
+
+## CRITERIOS DE EVALUACIÓN
+
+- **Derivación Correcta (90%+)**: Identifica y deriva correctamente al agente apropiado.
+- **Cualificación de Leads (80%+)**: Obtiene los datos clave (nombre, email, tipo de proyecto, etc.).
+- **Tono y Personalidad (85%+)**: Mantiene el tono definido y usa las frases características.
+- **Aplicación de Reglas (95%+)**: Respeta los límites y reglas de funcionamiento.
+
+---
+
+## POLÍTICAS COMERCIALES
+
+### Precios y Cotizaciones
+- No se comparten precios sin diagnóstico previo.
+- Todos los presupuestos requieren una reunión inicial.
+
+### Facturación
+- **Tipos de Factura**: Se emiten Facturas C para todos los servicios.
+- **Datos Requeridos**: Para facturar, se solicita CUIT o CUIL, Razón Social y Domicilio Fiscal.
+- **Proceso**: Las facturas se envían por email dentro de los 5 días hábiles posteriores al pago.
+
+### Metodología de Trabajo
+- Desarrollo bajo metodologías ágiles.
+- Trabajo por sprints con entregas incrementales.
+- Reuniones de seguimiento incluidas.
+- Entrega de código fuente garantizada.
+
+### Tiempos y Plazos
+- No prometer plazos exactos sin análisis técnico.
+- Mencionar que los tiempos dependen de la complejidad.
+- Ofrecer estimaciones generales solo después de la reunión inicial.
