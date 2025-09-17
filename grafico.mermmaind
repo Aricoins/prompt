@@ -1,0 +1,81 @@
+---
+config:
+  look: neo
+---
+graph TD
+    classDef decision fill:#FFDDC1,stroke:#D8A37B,stroke-width:2px,color:#333
+    classDef process fill:#C1E1FF,stroke:#7BADD8,stroke-width:2px,color:#333
+    classDef tool fill:#D4EDDA,stroke:#82C3A3,stroke-width:2px,color:#333
+    classDef startend fill:#F3E5F5,stroke:#AB47BC,stroke-width:2px,color:#333
+    classDef escalation fill:#FFCDD2,stroke:#E57373,stroke-width:2px,color:#333
+    classDef subgraphstyle fill:#FAFAFA,stroke:#E0E0E0,stroke-width:2px
+    subgraph " "
+        direction LR
+        subgraph "Leyenda"
+            L1("Acción / Proceso"):::process
+            L2{"Decisión"}:::decision
+            L3["Herramienta / Integración"]:::tool
+            L4(("Punto de Flujo")):::startend
+            L5["Escalamiento a Humano"]:::escalation
+        end
+    end
+    subgraph "Inicio de Conversación"
+        A("Iniciar Conversación"):::startend
+        B{"¿Cliente Nuevo?"}:::decision
+        C["Enviar Mensaje de Bienvenida y Catálogo"]:::process
+        D["Pedir Datos (Nombre, Localidad, Teléfono)"]:::process
+        E["Herramienta: registro_cliente"]:::tool
+        F["Mensaje de Bienvenida a Cliente Existente"]:::process
+    end
+    subgraph "Gestión de Pedido"
+        G("Esperar Pedido del Cliente"):::startend
+        H{"Tipo de Pedido"}:::decision
+        I["Preguntar Cambios"]:::process
+        J{"¿Hay Stock para la Modificación?"}:::decision
+        K["Actualizar Pedido y Total"]:::process
+        L["Ofrecer Alternativas"]:::process
+        M{"¿Hay Stock de todo?"}:::decision
+        AG["Herramienta: registro_pedido"]:::tool
+        N["Confirmar Pedido"]:::process
+        O["Ofrecer Alternativas"]:::process
+        P["Interpretar o Preguntar para Aclarar"]:::process
+    end
+    subgraph "Gestión de Pagos y Envíos"
+        Q("Preguntar por Envío y Pago"):::startend
+        R{"¿Cómo Pagar?"}:::decision
+        S["Calcular Total con Recargo (35%)"]:::process
+        T["Enviar Link de Mercado Pago"]:::process
+        U["Escalar a Asesor Humano"]:::escalation
+        V{"¿Cómo Enviar?"}:::decision
+        W["Informar Horarios y Dirección"]:::process
+        X["Preguntar Quién Retira"]:::process
+        Y["Informar Costos de Envío"]:::process
+    end
+    subgraph "Cierre y Casos Especiales"
+        Z("Confirmación de Pago y Envío"):::startend
+        AA["Mensaje: ¡Gracias por tu compra!"]:::process
+        AB["Consulta Producto Agotado"]:::process
+        AC["Sugerencias Proactivas a Clientes Existentes"]:::process
+        AE{"Condiciones de Escalación"}:::decision
+        AF["Herramienta: llamar_asesor"]:::escalation
+    end
+    A --> B
+    B -- "Si" --> C --> D --> E --> G
+    B -- "No" --> F --> G
+    G --> H
+    H -- "Modificar Pedido" --> I --> J
+    J -- "Si" --> K --> Q
+    J -- "No" --> L --> G
+    H -- "Pedido Nuevo" --> M
+    M -- "Si" --> AG --> N --> Q
+    M -- "No" --> O --> G
+    H -- "Usa Jerga (curva)" --> P --> G
+    Q --> R
+    R -- "Tarjeta" --> S --> T --> Z
+    R -- "Pago Flexible" --> U
+    Q --> V
+    V -- "Recogida en Local" --> W --> X --> Z
+    V -- "Envío" --> Y --> Z
+    Z --> AA
+    AB --> O
+    AE -- "Si" --> AF
